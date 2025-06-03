@@ -1,0 +1,56 @@
+{
+  "partition_key": {
+    "S": "NETWORK#908110"
+  },
+  "sort_key": {
+    "S": "TEST_TYPE#LATENCY#EXECUTION_DATE#2025-06-01T06:19:59.000"
+  },
+  "created_at": {
+    "N": "1748758814632"
+  },
+  "error_code": {
+    "S": "ERROR_CODE_NONE"
+  },
+  "error_details": {
+    "S": ""
+  },
+  "execution_date": {
+    "N": "1748758799000"
+  },
+  "latency_avg_microseconds": {
+    "N": "11351"
+  },
+  "latency_max_microseconds": {
+    "N": "12980"
+  },
+  "latency_measurements_length": {
+    "N": "15"
+  },
+  "latency_min_microseconds": {
+    "N": "9340"
+  },
+  "network_id": {
+    "S": "908110"
+  },
+  "organization_id": {
+    "N": "60034"
+  },
+  "provider": {
+    "S": ""
+  },
+  "target": {
+    "S": "eerospeedtests.com"
+  },
+  "target_ip": {
+    "S": "172.64.153.235"
+  },
+  "test_result": {
+    "S": "OK"
+  },
+  "test_type": {
+    "S": "LATENCY"
+  },
+  "ttl_epoch_seconds": {
+    "N": "90"
+  }
+}

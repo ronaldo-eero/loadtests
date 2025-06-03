@@ -1,0 +1,30 @@
+// Copyright 2024 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+
+
+// This message is used to send latency test result back to cloud
+
+
+message LatencyProtobuf {
+    google.protobuf.StringValue prefix = 1;
+    google.protobuf.StringValue timestamp = 2;
+    google.protobuf.StringValue result = 3;
+    google.protobuf.StringValue provider = 4;
+    google.protobuf.StringValue region = 5;
+    google.protobuf.StringValue dataCenter = 6;
+    google.protobuf.StringValue target = 7;
+    google.protobuf.StringValue targetIP = 8;
+    google.protobuf.Int32Value avgRTT = 9;
+    google.protobuf.Int32Value minRTT = 10;
+    google.protobuf.Int32Value maxRTT = 11;
+    google.protobuf.Int32Value stdRTT = 12;
+    google.protobuf.Int32Value noSuccess = 13;
+    google.protobuf.Int32Value noFailures = 14;
+    google.protobuf.StringValue protocol = 15;
+    google.protobuf.StringValue origin = 16;
+    repeated google.protobuf.Int32Value rtts = 17;
+    google.protobuf.StringValue errorCode = 18;
+    google.protobuf.StringValue errorString = 19;
+}
