@@ -1,11 +1,9 @@
 import requests
-import pytz
 import latency_pb2
 import time
 
 from google.protobuf.wrappers_pb2 import StringValue
 
-import datetime
 def create_latency():
     action_result = latency_pb2.ActionResult()
     action_result.status = latency_pb2.ActionResultStatus.SUCCESS
@@ -37,11 +35,13 @@ def main():
     serialized_payload = payload.SerializeToString()
     print(payload)
 
-    url = "http://localhost:9000/action/performance_tests/latency_test/01972a25-a126-71e0-af3c-721501e5d642"
+    # url = "http://localhost:9000/action/performance_tests/latency_test/01972a25-a126-71e0-af3c-721501e5d642"
+    url = "http://localhost:9000/action/performance_tests/latency_test/01971588-78a0-72e9-b690-49daf6e22e9b"
     headers = {
         "Content-Type": "application/protobuf",
         "X-Firmware-Version": "v7.10.0-6631",
-        "X-TLS-Client-CN": "3.ERO0018638409.SES0004134833.CRT01387020450160395447"
+        # "X-TLS-Client-CN": "3.ERO0018638409.SES0004134833.CRT01387020450160395447"
+        "X-TLS-Client-CN": "3.ERO0023654166.SES0003542721.CRT01379260887513256599"
     }
 
     try:

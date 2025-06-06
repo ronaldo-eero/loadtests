@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package eero.olapapi.protobuf;
+
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "eero.olapapi.grpc";
+option java_outer_classname = "OLAPService";
+
+enum POlapErrors {
+  UNKNOWN_ERROR = 0;
+  ENTITY_NOT_FOUND = 1;
+  BAD_REQUEST = 2;
+}
+
+service OLAPService {
+  rpc GetDnsRttAggregatedEvents (GetDnsRttAggregatedEventsRequest) returns (GetDnsRttAggregatedEventsResponse) {}
+}
+
+message GetDnsRttAggregatedEventsRequest {
+  int32 network_id = 1;
+  int64 start_time = 2;
+  int64 end_time = 3;
+}
+
+message GetDnsRttAggregatedEventsResponse {
+  oneof result {
+    PDnsRttAggregatedEventsResponse dns_rtt_aggregated_events_response = 1;
+    POlapErrors error = 2;
+  }
+}
+
+message PDnsRttAggregatedEventsResponse {
+  repeated PDnsRttAggregatedEvents dns_aggregated_events = 1;
+}
+
+message PDnsRttAggregatedEvents {
+  int32 network_id = 1;
+  int64 rtt_10 = 2;
+  int64 rtt_30 = 3;
+  int64 rtt_100 = 4;
+  int64 rtt_150 = 5;
+  int64 rtt_300 = 6;
+  int64 rtt_500 = 7;
+  int64 rtt_800 = 8;
+  int64 rtt_1600 = 9;
+  int64 rtt_16000 = 10;
+  double highest_rtt = 11;
+  repeated PTlsServiceProvider tls_server_providers = 12;
+  int64 execution_date = 13;
+}
+message PTlsServiceProvider {
+  string name = 1;
+  string test_server_ip_address = 2;
+}
